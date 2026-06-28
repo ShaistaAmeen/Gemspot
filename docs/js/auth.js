@@ -1,5 +1,4 @@
-const API = 'http://localhost:5000/api';
-
+const API = 'https://your-railway-url.railway.app/api';
 // ── REGISTER ──
 async function registerUser() {
   const name = document.getElementById('name')?.value.trim();

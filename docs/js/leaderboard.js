@@ -1,4 +1,4 @@
-const API = 'http://localhost:5000/api';
+const API = 'https://your-railway-url.railway.app/api';
 
 const badgeRules = [
   { icon: '🌱', name: 'New Scout',  min: 0  },

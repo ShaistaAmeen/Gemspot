@@ -1,4 +1,4 @@
-const API = 'http://localhost:5000/api';
+const API = 'https://your-railway-url.railway.app/api';
 const token = localStorage.getItem('token');
 const user = JSON.parse(localStorage.getItem('user') || 'null');
 

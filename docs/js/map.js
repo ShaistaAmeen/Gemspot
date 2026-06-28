@@ -1,4 +1,4 @@
-const API = 'http://localhost:5000/api';
+const API = 'https://your-railway-url.railway.app/api';
 
 var map = L.map('gemmap').setView([29.3956, 71.6836], 13);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

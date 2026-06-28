@@ -1,4 +1,4 @@
-const API = 'http://localhost:5000/api';
+const API = 'https://your-railway-url.railway.app/api';
 let selectedLat = null;
 let selectedLng = null;
 let marker = null;
