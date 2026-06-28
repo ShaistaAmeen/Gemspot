@@ -1,4 +1,4 @@
-const Spot = require('../models/Spot');
+const Spot = require('../models/spot');
 
 exports.getSpots = async (req, res) => {
   try {
