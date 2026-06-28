@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Drop a Gem — GemSpot</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <i class="fas fa-map-marker-alt"></i> GemSpot
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Map</a>
+      <a href="submit.html">Drop a Gem</a>
+      <a href="login.html" id="nav-login">Login</a>
+      <a href="#" id="nav-logout" style="display:none" onclick="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <!-- SUBMIT SECTION -->
+  <section class="auth-section">
+    <div class="submit-card">
+      <div class="auth-icon">
+        <i class="fas fa-map-marker-alt"></i>
+      </div>
+      <h2>Drop a Gem</h2>
+      <p class="auth-sub">Share a hidden spot with your community</p>
+
+      <div id="error-msg" class="error-msg" style="display:none;"></div>
+      <div id="success-msg" class="success-msg" style="display:none;"></div>
+
+      <!-- Spot Name -->
+      <div class="form-group">
+        <label><i class="fas fa-star"></i> Spot Name</label>
+        <input type="text" id="name" placeholder="e.g. Hidden Rooftop Café"/>
+      </div>
+
+      <!-- Description -->
+      <div class="form-group">
+        <label><i class="fas fa-pen"></i> Description</label>
+        <textarea id="description" placeholder="What makes this place special?"></textarea>
+      </div>
+
+      <!-- Category -->
+      <div class="form-group">
+        <label><i class="fas fa-tag"></i> Category</label>
+        <select id="category">
+          <option value="cafe">☕ Café</option>
+          <option value="viewpoint">🌄 Viewpoint</option>
+          <option value="food">🍜 Food</option>
+          <option value="bookshop">📚 Bookshop</option>
+          <option value="other">✨ Other</option>
+        </select>
+      </div>
+
+      <!-- Mood -->
+      <div class="form-group">
+        <label><i class="fas fa-smile"></i> Vibe / Mood</label>
+        <select id="mood">
+          <option value="chill">😌 Chill</option>
+          <option value="romantic">💕 Romantic</option>
+          <option value="adventurous">🏃 Adventurous</option>
+          <option value="peaceful">🌿 Peaceful</option>
+          <option value="social">🎉 Social</option>
+        </select>
+      </div>
+
+      <!-- Address -->
+      <div class="form-group">
+        <label><i class="fas fa-map-pin"></i> Address (optional)</label>
+        <input type="text" id="address" placeholder="e.g. Near old bazaar, Bahawalpur"/>
+      </div>
+
+      <!-- Map Pin -->
+      <div class="form-group">
+        <label><i class="fas fa-map"></i> Pin Location on Map</label>
+        <p class="map-hint">👆 Click anywhere on the map to drop your gem pin</p>
+        <div id="submitmap"></div>
+        <div id="coords-display" class="coords-display" style="display:none;">
+          <i class="fas fa-check-circle" style="color:var(--teal)"></i>
+          Location pinned! (<span id="lat-display"></span>, <span id="lng-display"></span>)
+        </div>
+      </div>
+
+      <button class="btn-primary full-width" onclick="submitSpot()">
+        <i class="fas fa-gem"></i> Drop This Gem
+      </button>
+    </div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/submit.js"></script>
+</body>
+</html>
+

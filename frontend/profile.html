@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Profile — GemSpot</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <i class="fas fa-map-marker-alt"></i> GemSpot
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Map</a>
+      <a href="submit.html">Drop a Gem</a>
+      <a href="profile.html">Profile</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <!-- PROFILE HERO -->
+  <section class="profile-hero">
+    <div class="profile-avatar">
+      <i class="fas fa-user"></i>
+    </div>
+    <h2 id="profile-name">Loading...</h2>
+    <p id="profile-email" class="profile-email"></p>
+    <div class="profile-badge" id="profile-badge">
+      <i class="fas fa-medal"></i> New Scout
+    </div>
+  </section>
+
+  <!-- STATS ROW -->
+  <section class="profile-stats">
+    <div class="profile-stat">
+      <span id="spots-count">0</span>
+      <p>Gems Dropped</p>
+    </div>
+    <div class="profile-stat">
+      <span id="votes-count">0</span>
+      <p>Total Upvotes</p>
+    </div>
+    <div class="profile-stat">
+      <span id="badge-count">1</span>
+      <p>Badges Earned</p>
+    </div>
+  </section>
+
+  <!-- BADGES SECTION -->
+  <section class="badges-section">
+    <h3><i class="fas fa-trophy"></i> Your Badges</h3>
+    <div class="badges-grid" id="badges-grid">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+  <!-- MY GEMS -->
+  <section class="my-gems">
+    <h3><i class="fas fa-map-marker-alt"></i> My Gems</h3>
+    <div class="gems-grid" id="gems-grid">
+      <!-- filled by JS -->
+    </div>
+  </section>
+
+  <script src="js/profile.js"></script>
+</body>
+</html>

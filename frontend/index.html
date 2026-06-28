@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GemSpot — Discover Hidden Gems</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <!-- Leaflet Map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <i class="fas fa-map-marker-alt"></i> GemSpot
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Map</a>
+      <a href="submit.html">Drop a Gem</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="profile.html" id="nav-profile" style="display:none">Profile</a>
+      <a href="login.html" id="nav-login">Login</a>
+      <a href="register.html" id="nav-join">Join</a>
+      <a href="#" id="nav-logout" style="display:none" onclick="logout()">Logout</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover places the<br/><span>algorithm never shows you.</span></h1>
+      <p>Real hidden gems. Shared by real people in your city.</p>
+      <div class="hero-btns">
+        <button onclick="document.getElementById('map').scrollIntoView({behavior:'smooth'})"
+          class="btn-primary">
+          <i class="fas fa-map"></i> Explore Map
+        </button>
+        <a href="register.html" class="btn-outline">Become a Scout</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><span>500+</span><p>Hidden Gems</p></div>
+      <div class="stat"><span>1.2k</span><p>Scouts</p></div>
+      <div class="stat"><span>12</span><p>Cities</p></div>
+    </div>
+  </section>
+
+  <!-- MAP SECTION -->
+  <section class="map-section" id="map">
+    <div class="map-header">
+      <h2><i class="fas fa-map-marked-alt"></i> Gem Map</h2>
+      <div class="map-filters">
+        <button class="filter-btn active" onclick="filterSpots('all')">All</button>
+        <button class="filter-btn" onclick="filterSpots('cafe')">☕ Cafés</button>
+        <button class="filter-btn" onclick="filterSpots('viewpoint')">🌄 Viewpoints</button>
+        <button class="filter-btn" onclick="filterSpots('food')">🍜 Food</button>
+        <button class="filter-btn" onclick="filterSpots('bookshop')">📚 Bookshops</button>
+      </div>
+    </div>
+    <div id="gemmap"></div>
+  </section>
+
+  <!-- FEATURES SECTION -->
+  <section class="features">
+    <h2>Why GemSpot?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <i class="fas fa-users"></i>
+        <h3>Community Driven</h3>
+        <p>Every spot is submitted by a real person — no paid listings, no ads.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-route"></i>
+        <h3>Gem Trails</h3>
+        <p>Follow curated multi-stop routes through your city.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-trophy"></i>
+        <h3>Scout Badges</h3>
+        <p>Earn rewards for discovering and sharing hidden gems.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fas fa-smile"></i>
+        <h3>Mood Matching</h3>
+        <p>"I feel like..." → instant suggestions that match your vibe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p><i class="fas fa-map-marker-alt"></i> GemSpot — Built with love for hidden places.</p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/map.js"></script>
+  <script>
+    var token = localStorage.getItem('token');
+    if (token) {
+      document.getElementById('nav-login').style.display = 'none';
+      document.getElementById('nav-join').style.display = 'none';
+      document.getElementById('nav-profile').style.display = 'inline';
+      document.getElementById('nav-logout').style.display = 'inline';
+    }
+    function logout() {
+      localStorage.removeItem('token');
+      localStorage.removeItem('user');
+      window.location.href = 'index.html';
+    }
+  </script>
+</body>
+</html>
