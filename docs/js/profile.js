@@ -1,4 +1,4 @@
-const API = 'https://your-railway-url.railway.app/api';
+const API = 'https://gemspot-production.up.railway.app/api';
 const token = localStorage.getItem('token');
 const user = JSON.parse(localStorage.getItem('user') || 'null');
 

@@ -1,4 +1,4 @@
-const API = 'https://your-railway-url.railway.app/api';
+const API = 'https://gemspot-production.up.railway.app/api';
 
 const badgeRules = [
   { icon: '🌱', name: 'New Scout',  min: 0  },

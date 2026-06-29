@@ -10,7 +10,12 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: ['http://127.0.0.1:5500', 'http://localhost:5500', 'https://ShaistaAmeen.github.io'],
+  origin: [
+    'http://127.0.0.1:5500',
+    'http://localhost:5500',
+    'https://ShaistaAmeen.github.io',
+    'https://shaistaameen.github.io'
+  ],
   credentials: true
 }));
 app.use(express.json());

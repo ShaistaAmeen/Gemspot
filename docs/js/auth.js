@@ -1,4 +1,4 @@
-const API = 'https://your-railway-url.railway.app/api';
+const API = 'https://gemspot-production.up.railway.app/api';
 // ── REGISTER ──
 async function registerUser() {
   const name = document.getElementById('name')?.value.trim();
@@ -25,7 +25,7 @@ async function registerUser() {
     showSuccess('Account created! Redirecting...');
     setTimeout(() => window.location.href = 'index.html', 1500);
   } catch (err) {
-    showError('Server not reachable. Make sure backend is running.');
+    showError('Connecting to server... please wait 30 seconds and try again.');
   }
 }
 
