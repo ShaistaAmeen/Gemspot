@@ -10,7 +10,7 @@ connectDB();
 
 // Middleware
 app.use(cors({
-  origin: ['http://127.0.0.1:5500', 'http://localhost:5500'],
+  origin: ['http://127.0.0.1:5500', 'http://localhost:5500', 'https://ShaistaAmeen.github.io'],
   credentials: true
 }));
 app.use(express.json());
@@ -23,6 +23,16 @@ app.use('/api/spots', require('./routes/spots'));
 app.get('/', (req, res) => {
   res.json({ message: 'GemSpot API is running!' });
 });
+
+// Keep server awake — ping every 14 minutes
+const https = require('https');
+setInterval(() => {
+  https.get('https://gemspot-production.up.railway.app', (res) => {
+    console.log('Server pinged — staying awake');
+  }).on('error', (err) => {
+    console.log('Ping error:', err.message);
+  });
+}, 14 * 60 * 1000);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
